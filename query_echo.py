@@ -51,7 +51,8 @@ def main():
         response = requests.post(
             url="https://echo.kroger.com/kibana/api/console/proxy?path=" + index + "%2F_search&method=GET",
             data=json.dumps(query),
-            headers=HEADERS)
+            headers=HEADERS,
+            verify=False)
         print("Status Code: " + str(response.status_code))
     with open(output_file, 'w') as response_file:
         response_file.write(json.dumps(response.json()))
