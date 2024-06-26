@@ -54,6 +54,10 @@ def main():
             headers=HEADERS,
             verify=False)
         print("Status Code: " + str(response.status_code))
+        if response.status_code != 200:
+            error_response = response.json()
+            print("Error Type: " + error_response["type"])
+            print("Error Reason: " + error_response["reason"])
     with open(output_file, 'w') as response_file:
         response_file.write(json.dumps(response.json()))
 
