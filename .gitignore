@@ -163,6 +163,3 @@ cython_debug/
 
 # MAC stuff
 .DS_Store
-
-# Product stuff
-cookie
